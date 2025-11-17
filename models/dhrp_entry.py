@@ -3,11 +3,11 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 class DhrpEntry(db.Model):
-    __tablename__ = 'dhrp_entries'  # ✅ Explicit table name
+    __tablename__ = 'dhrp_entries'
 
     id = db.Column(db.Integer, primary_key=True)
     company = db.Column(db.String(100))
-    bse_code = db.Column(db.String(30))  # Increased length to avoid DataError
+    bse_code = db.Column(db.String(30))
     upload_date = db.Column(db.String(20))
     uploader_name = db.Column(db.String(100))
     promoter = db.Column(db.String(100))
